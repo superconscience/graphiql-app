@@ -36,7 +36,11 @@ export const routesMap = {
 export const routes: RouteObject[] = [
   {
     path: '',
-    element: <Layout />,
+    element: (
+      <AuthRoute>
+        <Layout />
+      </AuthRoute>
+    ),
     children: [
       {
         path: '',
@@ -44,11 +48,7 @@ export const routes: RouteObject[] = [
         children: [
           {
             path: routesMap.home.path,
-            element: (
-              <AuthRoute>
-                <HomePage />
-              </AuthRoute>
-            ),
+            element: <HomePage />,
           },
 
           {
