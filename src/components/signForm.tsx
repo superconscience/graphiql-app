@@ -1,9 +1,3 @@
-//import React, { FC } from 'react';
-
-//export const SignForm: FC = () => {
-//  return <div>signForm</div>;
-//};
-
 import { FC } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
