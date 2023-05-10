@@ -6,8 +6,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    max-width: 1160px;
   }
   &__logo {
     display: flex;
@@ -30,8 +28,17 @@
   }
   &__list {
     text-transform: uppercase;
-    //font-weight: 700;
     font-size: 14px;
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  &__user-icon {
+    cursor: pointer;
+    height: 35px;
   }
 
 }

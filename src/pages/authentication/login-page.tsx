@@ -1,10 +1,12 @@
 import { FC } from 'react';
 import { SignForm } from '../../components/signForm';
+import { Footer } from '../../components/footer';
 
 export const LoginPage: FC = () => {
   return (
     <>
       <SignForm title="Welcome Back!" typeForm="Log in" linkForm="Register" />
+      <Footer />
     </>
   );
 };

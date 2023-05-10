@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { SignForm } from '../../components/signForm';
+import { Footer } from '../../components/footer';
 
 export type FormInputs = {
   email: string;
@@ -10,6 +11,7 @@ export const RegisterPage: FC = () => {
   return (
     <>
       <SignForm title="Create an account" typeForm="Register" linkForm="Already have an account?" />
+      <Footer />
     </>
   );
 };

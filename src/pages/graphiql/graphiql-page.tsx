@@ -3,8 +3,8 @@ import { FC } from 'react';
 export const GraphiQlPage: FC = () => {
   return (
     <>
-      <div className="container">
-        <h1>ZDES BUDET GRAPHIQL EDITOR</h1>
+      <div className="GraphiQlPage__container">
+        <h1>Editor Page</h1>
       </div>
     </>
   );

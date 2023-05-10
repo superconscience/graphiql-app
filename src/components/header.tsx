@@ -1,8 +1,23 @@
-import { FC } from 'react';
+import { FC, useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { routesMap } from '../routes';
+import { Modal } from './modal';
 
 export const Header: FC = () => {
+  const [isModal, setIsModal] = useState(false);
+  const refModal = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (e: any) => {
+    if (refModal.current && !refModal.current?.contains(e.target)) {
+      setIsModal(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => document.removeEventListener('click', handleClickOutside, true);
+  });
+
   return (
     <header className="header">
       <div className="header__container">
@@ -20,7 +35,12 @@ export const Header: FC = () => {
             </li>
           </ul>
         </nav>
-        <div>user</div>
+        <div onClick={() => setIsModal(true)} className="header__user">
+          <img className="header__user-icon" src="./user.svg" />
+          <div className="header__user-menu" ref={refModal}>
+            {isModal && <Modal />}
+          </div>
+        </div>
       </div>
     </header>
   );
