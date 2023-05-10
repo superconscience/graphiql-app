@@ -10,6 +10,7 @@ import {
 import { useNavigate } from 'react-router';
 import { FieldValues, useForm } from 'react-hook-form';
 import { routesMap } from '../../routes';
+import { SignForm } from '../../components/signForm';
 
 export type FormInputs = {
   email: string;
@@ -62,7 +63,9 @@ export const RegisterPage: FC = () => {
 
   return (
     <>
-      <div className="sign">
+      <SignForm title="Create an account" typeForm="Register" linkForm="Already have an account?" />
+      {/*<SignForm title="Already have an account?" type="Login" link="Register" />*/}
+      {/*<div className="sign">
         <div className="sign__title">Welcome back!</div>
         <form className="sign__form" onSubmit={handleSubmit(onSubmit)}>
           <div className="sign__field">
@@ -124,7 +127,7 @@ export const RegisterPage: FC = () => {
             Register
           </Link>
         </div>
-      </div>
+      </div>*/}
     </>
   );
 };
