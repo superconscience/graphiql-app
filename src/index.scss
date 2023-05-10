@@ -18,13 +18,13 @@ body {
 }
 
 :root {
-  --background-primary: #3F1E47;
-  --background-secondary: #BB4996;
-  --background-pink: #E535AB;
-  --background-pink-dark: #131D35;
+  --background-primary: #3f1e47;
+  --background-secondary: #bb4996;
+  --background-pink: #e535ab;
+  --background-pink-dark: #131d35;
   --text-primary: #fff;
-  --text-grey: #D2D3D5;
-
+  --text-secondary: #fff;
+  --text-grey: #d2d3d5;
 }
 
 button {
@@ -39,3 +39,4 @@ a {
 
 @import './styles/components/sign.scss';
 @import './styles/components/header.scss';
+@import './styles/components/footer.scss';
