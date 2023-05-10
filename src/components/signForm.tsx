@@ -12,6 +12,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { useNavigate } from 'react-router';
 import { FieldValues, useForm } from 'react-hook-form';
@@ -32,6 +33,7 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm, linkForm }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormInputs>({
     mode: 'onSubmit',
@@ -40,6 +42,21 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm, linkForm }) => {
   const auth = getAuth();
   const navigate = useNavigate();
   const [authing, setAuthing] = useState(false);
+
+  const onLogin = (email: string, password: string) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        navigate('/');
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+
   const signInWithGoogle = async () => {
     setAuthing(true);
 
@@ -69,7 +86,12 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm, linkForm }) => {
   };
 
   const onSubmit = (data: FieldValues) => {
-    signInWitEmail(data.email, data.password);
+    if (typeForm === 'Register') {
+      signInWitEmail(data.email, data.password);
+    } else {
+      onLogin(data.email, data.password);
+    }
+    reset();
   };
 
   return (
@@ -120,14 +142,14 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm, linkForm }) => {
             <div>{errors.password?.message}</div>
           </div>
           <button className="sign__btn" type="submit">
-            Sign in
+            {typeForm}
           </button>
         </form>
 
         <div className="sign__or">or</div>
 
         <button className="sign__btn-google" onClick={() => signInWithGoogle()} disabled={authing}>
-          Sign in with Google
+          {typeForm} with Google
         </button>
 
         <div className="sign__auth-box">
