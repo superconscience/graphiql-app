@@ -1,36 +1,29 @@
-import '@graphiql/plugin-explorer/dist/style.css';
-import { buildHTTPExecutor } from '@graphql-tools/executor-http';
-import { schemaFromExecutor } from '@graphql-tools/wrap';
+import {
+  GraphiQLPlugin,
+  useEditorContext,
+  useExecutionContext,
+  useSchemaContext,
+} from '@graphiql/react';
 import GraphiQLExplorer, { GraphiQLExplorerProps } from 'graphiql-explorer';
-import 'graphiql/graphiql.css';
-import { GraphQLSchema } from 'graphql';
-import { useEffect, useState } from 'react';
-import './explorer/index.css';
+import React, { useRef } from 'react';
 
-export const GraphiQLWithExplorer = (props: GraphiQLExplorerProps & { url: string }) => {
-  const [schema, setSchema] = useState<{
-    schema: GraphQLSchema | null;
-  }>({ schema: null });
+import './graphiql-explorer.d.ts';
+import './index.css';
 
-  useEffect(() => {
-    async function fetchSchema() {
-      const remoteExecutor = buildHTTPExecutor({ endpoint: props.url });
-      const postsSubschema = {
-        schema: await schemaFromExecutor(remoteExecutor),
-      };
-      setSchema(postsSubschema);
-    }
-    fetchSchema();
-  }, [props.url]);
+function ExplorerPlugin(props: GraphiQLExplorerProps) {
+  const { setOperationName } = useEditorContext({ nonNull: true });
+  const { schema } = useSchemaContext({ nonNull: true });
+  const { run } = useExecutionContext({ nonNull: true });
 
-  if (!schema || !schema.schema) {
-    return <div>Loading schema...</div>;
-  }
-  console.log(schema);
   return (
     <GraphiQLExplorer
-      schema={schema.schema}
-      onRunOperation={(operationName) => {}}
+      schema={schema}
+      onRunOperation={(operationName) => {
+        if (operationName) {
+          setOperationName(operationName);
+        }
+        run();
+      }}
       explorerIsOpen
       colors={{
         keyword: 'hsl(var(--color-primary))',
@@ -131,4 +124,38 @@ export const GraphiQLWithExplorer = (props: GraphiQLExplorerProps & { url: strin
       {...props}
     />
   );
-};
+}
+
+export function useExplorerPlugin(props: GraphiQLExplorerProps) {
+  const propsRef = useRef(props);
+  propsRef.current = props;
+
+  const pluginRef = useRef<GraphiQLPlugin>();
+  pluginRef.current ||= {
+    title: 'GraphiQL Explorer',
+    icon: () => (
+      <svg height="1em" strokeWidth="1.5" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M18 6H20M22 6H20M20 6V4M20 6V8"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M21.4 20H2.6C2.26863 20 2 19.7314 2 19.4V11H21.4C21.7314 11 22 11.2686 22 11.6V19.4C22 19.7314 21.7314 20 21.4 20Z"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M2 11V4.6C2 4.26863 2.26863 4 2.6 4H8.77805C8.92127 4 9.05977 4.05124 9.16852 4.14445L12.3315 6.85555C12.4402 6.94876 12.5787 7 12.722 7H14"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+    content: () => <ExplorerPlugin {...propsRef.current} />,
+  };
+  return pluginRef.current;
+}

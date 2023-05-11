@@ -1,7 +1,8 @@
-import { GraphQLSchema, GraphQLSchemaConfig, IntrospectionQuery } from 'graphql';
 import {} from 'codemirror-graphql/esm/hint';
+import { IntrospectionQuery } from 'graphql';
 import debounce from 'lodash.debounce';
-import { Uri, editor, languages } from 'monaco-editor';
+import { Uri, editor } from 'monaco-editor';
+import { MonacoGraphQLAPI } from 'monaco-graphql';
 import { initializeMode } from 'monaco-graphql/esm/initializeMode';
 import { FC, useEffect, useRef, useState } from 'react';
 import {
@@ -11,7 +12,6 @@ import {
   getSchema,
   queryAction,
 } from './helpers';
-import { MonacoGraphQLAPI } from 'monaco-graphql';
 export type QueryEditorProps = {
   url: string;
 };
@@ -94,19 +94,11 @@ export const QueryEditor: FC<QueryEditorProps> = ({ url }) => {
 
           setSchema(data.data);
 
-          //  api.setSchemaConfig([
-          //     {
-          //       schema: GraphQLSchema,
-          //       fileMatch: ['**/*.graphql'],
-          //       uri: 'myschema.graphql',
-          //     },
-          //   ]);
-
           return;
         })
         .then(() => setLoading(false));
     }
-  }, [schema, loading, url]);
+  }, [schema, loading, url, api]);
 
   return <div ref={opsRef} className="editor" />;
 };
