@@ -7,7 +7,6 @@ import { initializeApp } from 'firebase/app';
 import { config } from './firebase/firebase-config';
 import { RegisterPage } from './pages/authentication/register-page';
 import { LoginPage } from './pages/authentication/login-page';
-import { InitPage } from './pages/authentication/init-page';
 initializeApp(config.firebaseConfig);
 
 export const routesMap = {
@@ -19,17 +18,13 @@ export const routesMap = {
     path: '/graphiql',
     title: 'GraphiQL',
   },
-  login: {
-    path: '/login',
-    title: 'login',
-  },
   register: {
     path: '/register',
     title: 'register',
   },
-  init: {
-    path: '/init',
-    title: 'init',
+  login: {
+    path: '/login',
+    title: 'login',
   },
 } as const;
 
@@ -66,9 +61,5 @@ export const routes: RouteObject[] = [
   {
     path: routesMap.login.path,
     element: <LoginPage />,
-  },
-  {
-    path: routesMap.init.path,
-    element: <InitPage />,
   },
 ];
