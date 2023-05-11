@@ -1,0 +1,22 @@
+.modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--background-primary);
+  border: 2px solid var(--background-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    cursor: pointer;
+    background: none;
+    color: inherit;
+    border: none;
+  }
+}
