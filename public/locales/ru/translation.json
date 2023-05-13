@@ -1,0 +1,22 @@
+{
+  "homePage": "Главная",
+  "editorPage": "Редактор",
+  "homePageContent": "Главная страница",
+  "editorPageContent": "Страница редактора",
+  "signTitle": "С возвращением!",
+  "signTitleCreate": "Создать аккаунт",
+  "signEmail": "Е-мейл",
+  "signPassword": "Пароль",
+  "signLogin": "Войти",
+  "signTextOr": "или",
+  "signLoginWithGoogle": "Войти с Google",
+  "signText": "Нужен аккаунт?",
+  "signRegister": "Зарегистрироваться",
+  "signRegisterWithGoogle": "Зарегистрироваться с Google",
+  "signLinkRegister": "Уже есть аккаунт?",
+  "signOut": "Выйти",
+  "language": "Язык",
+  "en": "aнг",
+  "ua": "укр",
+  "ru": "рус"
+}
