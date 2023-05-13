@@ -1,17 +1,18 @@
 import { FC, useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { routesMap } from '../routes';
-import { Language } from './language';
-import { Modal } from './modal';
+import { useTranslation } from 'react-i18next';
+import { UserMenu } from './userMenu';
 
 export const Header: FC = () => {
-  const [isModal, setIsModal] = useState(false);
+  const [isUserMenu, setIsUserMenu] = useState(false);
   const refModal = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   const handleClickOutside = (e: Event) => {
     const target = e.target as HTMLDivElement;
     if (refModal.current && !refModal.current?.contains(target)) {
-      setIsModal(false);
+      setIsUserMenu(false);
     }
   };
 
@@ -30,18 +31,17 @@ export const Header: FC = () => {
 
           <ul className="header__list">
             <li className="header__item">
-              <Link to={routesMap.home.path}>Home</Link>
+              <Link to={routesMap.home.path}>{t('homePage')}</Link>
             </li>
             <li className="header__item">
-              <Link to={routesMap.graphiql.path}>Editor</Link>
+              <Link to={routesMap.graphiql.path}>{t('editorPage')}</Link>
             </li>
           </ul>
         </nav>
         <div className="header__user">
-          <Language />
-          <img onClick={() => setIsModal(true)} className="header__user-icon" src="./user.svg" />
+          <img onClick={() => setIsUserMenu(true)} className="header__user-icon" src="./user.svg" />
           <div className="header__user-menu" ref={refModal}>
-            {isModal && <Modal />}
+            {isUserMenu && <UserMenu />}
           </div>
         </div>
       </div>
