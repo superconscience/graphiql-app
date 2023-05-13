@@ -1,13 +1,12 @@
-import { FC } from 'react';
-import * as React from 'react';
+import { FC, useState, ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Radio } from './Radio';
+import { Radio } from './radio';
 
 export const Language: FC = () => {
-  const [language, setLanguage] = React.useState(localStorage.getItem('i18nextLng') || 'en');
+  const [language, setLanguage] = useState(localStorage.getItem('i18nextLng') || 'en');
   const { i18n, t } = useTranslation();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLanguage(e.target.value as string);
     i18n.changeLanguage(e.target.value);
   };
