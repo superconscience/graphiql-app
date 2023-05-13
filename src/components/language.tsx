@@ -22,16 +22,16 @@ export const Language: FC = () => {
       />
       <Radio
         name="lang"
-        value="ru"
-        label={t('ru')}
-        checked={language === 'ru'}
+        value="ua"
+        label={t('ua')}
+        checked={language === 'ua'}
         onChange={handleChange}
       />
       <Radio
         name="lang"
-        value="ua"
-        label={t('ua')}
-        checked={language === 'ua'}
+        value="ru"
+        label={t('ru')}
+        checked={language === 'ru'}
         onChange={handleChange}
       />
     </div>

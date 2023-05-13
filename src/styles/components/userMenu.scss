@@ -1,4 +1,4 @@
-.menu {
+.user-menu {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -12,6 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 
   &__content {
     cursor: pointer;

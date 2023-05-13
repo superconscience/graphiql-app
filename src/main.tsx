@@ -8,7 +8,7 @@ import './index.scss';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Suspense fallback={<div>Loading...</div>}>
-        <App />
+      <App />
     </Suspense>
   </React.StrictMode>
 );

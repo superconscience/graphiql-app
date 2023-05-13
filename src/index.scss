@@ -30,24 +30,22 @@ body {
 button {
   border: none;
   outline: none;
+  font-size: 16px;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
-.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
-  background-color: red;
-}
 
 [class*='__container'] {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-
 
 @import './styles/components/sign.scss';
 @import './styles/components/header.scss';
 @import './styles/components/footer.scss';
 @import './styles/components/userMenu.scss';
+@import './styles/components/language.scss';

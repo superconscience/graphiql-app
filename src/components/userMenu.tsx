@@ -18,16 +18,16 @@ export const UserMenu: FC = () => {
   };
 
   return (
-    <div className="menu">
+    <div className="user-menu">
       {isOpenLang ? (
         <Language />
       ) : (
-        <button className="menu__content" onClick={handleClickLanguage}>
+        <button className="user-menu__content" onClick={handleClickLanguage}>
           {t('language')}
         </button>
       )}
 
-      <button className="menu__content" onClick={handleClick}>
+      <button className="user-menu__content" onClick={handleClick}>
         {t('signOut')}
       </button>
     </div>
