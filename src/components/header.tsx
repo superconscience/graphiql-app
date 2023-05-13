@@ -1,5 +1,5 @@
 import { FC, useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { routesMap } from '../routes';
 import { useTranslation } from 'react-i18next';
 import { UserMenu } from './userMenu';
@@ -25,16 +25,26 @@ export const Header: FC = () => {
     <header className="header">
       <div className="header__container">
         <nav className="header__nav">
-          <Link className="header__logo" to={routesMap.home.path}>
+          <NavLink className="header__logo" to={routesMap.home.path}>
             <img className="header__logo-icon" src="./logo.svg" />
-          </Link>
+          </NavLink>
 
           <ul className="header__list">
             <li className="header__item">
-              <Link to={routesMap.home.path}>{t('homePage')}</Link>
+              <NavLink
+                to={routesMap.home.path}
+                className={({ isActive }) => (isActive ? 'header__link-active' : 'header__link')}
+              >
+                {t('homePage')}
+              </NavLink>
             </li>
             <li className="header__item">
-              <Link to={routesMap.graphiql.path}>{t('editorPage')}</Link>
+              <NavLink
+                to={routesMap.graphiql.path}
+                className={({ isActive }) => (isActive ? 'header__link-active' : 'header__link')}
+              >
+                {t('editorPage')}
+              </NavLink>
             </li>
           </ul>
         </nav>
