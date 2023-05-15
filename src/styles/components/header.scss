@@ -13,7 +13,13 @@
     justify-content: center;
     &-icon {
       height: 40px;
-
+    }
+  }
+  &__link {
+    color: var(--text-grey);
+    &-active {
+      border-bottom: 1px solid var(--text-primary);
+      color: var(--text-primary);
     }
   }
   &__nav {
@@ -40,5 +46,4 @@
     cursor: pointer;
     height: 35px;
   }
-
 }

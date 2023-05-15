@@ -1,4 +1,4 @@
-.modal {
+.user-menu {
   position: absolute;
   right: 20px;
   top: 20px;
@@ -8,10 +8,12 @@
   border: 2px solid var(--background-secondary);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 2;
-  width: 70px;
+  width: 85px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 
   &__content {
     cursor: pointer;

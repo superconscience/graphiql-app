@@ -1,9 +1,4 @@
 .sign {
-  //width: 100vw;
-  //background: url('/src/assets/bg/register-bg.png') center / cover no-repeat;
-  ////display: flex;
-  ////flex-direction: column;
-
   padding: 32px;
   position: fixed;
   top: 50%;
@@ -75,9 +70,39 @@
     color: var(--background-pink);
     cursor: pointer;
   }
-  
+
   &__text {
     font-size: 14px;
     margin-right: 10px;
+  }
+  &__auth-box {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sign {
+    padding: 15px;
+    width: 330px;
+
+    &__field {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .sign {
+    padding: 15px;
+    width: 280px;
+    gap: 5px;
+    &__title {
+      margin: 0 auto;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    &__btn-submit {
+      font-size: 14px;
+    }
   }
 }

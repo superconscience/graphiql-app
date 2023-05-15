@@ -11,6 +11,7 @@ import {
 import { useNavigate } from 'react-router';
 import { FieldValues, useForm } from 'react-hook-form';
 import { routesMap } from '../routes';
+import { useTranslation } from 'react-i18next';
 
 export type FormInputs = {
   email: string;
@@ -20,10 +21,10 @@ export type FormInputs = {
 type SignFormProps = {
   title: string;
   typeForm: string;
-  linkForm: string;
 };
 
-export const SignForm: FC<SignFormProps> = ({ title, typeForm, linkForm }) => {
+export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
+  const { t } = useTranslation();
   const {
     register,
     handleSubmit,
@@ -95,7 +96,7 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm, linkForm }) => {
         <form className="sign__form" onSubmit={handleSubmit(onSubmit)}>
           <div className="sign__field">
             <label className="sign__form-label" htmlFor="name">
-              Email
+              {t('signEmail')}
             </label>
             <input
               {...register('email', {
@@ -113,7 +114,7 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm, linkForm }) => {
           </div>
           <div className="sign__field">
             <label className="sign__form-label" htmlFor="name">
-              Password
+              {t('signPassword')}
             </label>
             <input
               type="password"
@@ -136,23 +137,23 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm, linkForm }) => {
             <div>{errors.password?.message}</div>
           </div>
           <button className="sign__btn" type="submit">
-            {typeForm}
+            {t('signRegister')}
           </button>
         </form>
 
-        <div className="sign__or">or</div>
+        <div className="sign__or">{t('signTextOr')}</div>
 
         <button className="sign__btn-google" onClick={() => signInWithGoogle()} disabled={authing}>
-          {typeForm} with Google
+          {t('signRegisterWithGoogle')}
         </button>
 
         <div className="sign__auth-box">
-          {typeForm !== 'Register' && <span className="sign__text">Need an account?</span>}
+          {typeForm !== 'Register' && <span className="sign__text">{t('signText')}</span>}
           <Link
             to={typeForm === 'Register' ? routesMap.login.path : routesMap.register.path}
             className="sign__btn-auth"
           >
-            {linkForm}
+            {typeForm !== 'Register' ? t('signRegister') : t('signLinkRegister')}
           </Link>
         </div>
       </div>

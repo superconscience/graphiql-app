@@ -1,0 +1,22 @@
+{
+  "homePage": "Home",
+  "editorPage": "Editor",
+  "homePageContent": "Home page",
+  "editorPageContent": "Editor page",
+  "signTitle": "Welcome Back!",
+  "signTitleCreate": "Create an account",
+  "signEmail": "EMAIL",
+  "signPassword": "PASSWORD",
+  "signLogin": "Log in",
+  "signTextOr": "оr",
+  "signLoginWithGoogle": "Log in with Google",
+  "signText": "Need an account?",
+  "signRegister": "Register",
+  "signRegisterWithGoogle": "Register with Google",
+  "signLinkRegister": "Already have an account?",
+  "signOut": "Sign out",
+  "language": "Language",
+  "en": "en",
+  "ua": "ua",
+  "ru": "ru"
+}

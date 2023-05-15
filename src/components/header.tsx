@@ -1,15 +1,18 @@
 import { FC, useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { routesMap } from '../routes';
-import { Modal } from './modal';
+import { useTranslation } from 'react-i18next';
+import { UserMenu } from './userMenu';
 
 export const Header: FC = () => {
-  const [isModal, setIsModal] = useState(false);
+  const [isUserMenu, setIsUserMenu] = useState(false);
   const refModal = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
-  const handleClickOutside = (e: any) => {
-    if (refModal.current && !refModal.current?.contains(e.target)) {
-      setIsModal(false);
+  const handleClickOutside = (e: Event) => {
+    const target = e.target as HTMLDivElement;
+    if (refModal.current && !refModal.current?.contains(target)) {
+      setIsUserMenu(false);
     }
   };
 
@@ -22,23 +25,33 @@ export const Header: FC = () => {
     <header className="header">
       <div className="header__container">
         <nav className="header__nav">
-          <Link className="header__logo" to={routesMap.home.path}>
+          <NavLink className="header__logo" to={routesMap.home.path}>
             <img className="header__logo-icon" src="./logo.svg" />
-          </Link>
+          </NavLink>
 
           <ul className="header__list">
             <li className="header__item">
-              <Link to={routesMap.home.path}>Home</Link>
+              <NavLink
+                to={routesMap.home.path}
+                className={({ isActive }) => (isActive ? 'header__link-active' : 'header__link')}
+              >
+                {t('homePage')}
+              </NavLink>
             </li>
             <li className="header__item">
-              <Link to={routesMap.graphiql.path}>Editor</Link>
+              <NavLink
+                to={routesMap.graphiql.path}
+                className={({ isActive }) => (isActive ? 'header__link-active' : 'header__link')}
+              >
+                {t('editorPage')}
+              </NavLink>
             </li>
           </ul>
         </nav>
-        <div onClick={() => setIsModal(true)} className="header__user">
-          <img className="header__user-icon" src="./user.svg" />
+        <div className="header__user">
+          <img onClick={() => setIsUserMenu(true)} className="header__user-icon" src="./user.svg" />
           <div className="header__user-menu" ref={refModal}>
-            {isModal && <Modal />}
+            {isUserMenu && <UserMenu />}
           </div>
         </div>
       </div>
