@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { SignForm } from '../../components/signForm';
 import { Footer } from '../../components/footer';
-import { useTranslation } from 'react-i18next';
 import { Language } from '../../components/language';
+import { SignForm } from '../../components/signForm';
+import { useTypedTranslation } from '../../i18n/hooks';
 
 export type FormInputs = {
   email: string;
@@ -10,7 +10,7 @@ export type FormInputs = {
 };
 
 export const RegisterPage: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTypedTranslation();
   return (
     <>
       <div className="language__container">

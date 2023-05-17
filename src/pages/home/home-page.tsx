@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTypedTranslation } from '../../i18n/hooks';
 
 export const HomePage: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTypedTranslation();
   return (
     <>
       <div className="homePage__container">
