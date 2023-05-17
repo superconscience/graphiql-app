@@ -1,4 +1,4 @@
-import { FC, useState, ChangeEvent } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Radio } from './radio';
 
