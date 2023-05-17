@@ -1,10 +1,10 @@
-import { FC, useState, ChangeEvent } from 'react';
-import { useTranslation } from 'react-i18next';
+import { ChangeEvent, FC, useState } from 'react';
+import { useTypedTranslation } from '../i18n/hooks';
 import { Radio } from './radio';
 
 export const Language: FC = () => {
   const [language, setLanguage] = useState(localStorage.getItem('i18nextLng') || 'en');
-  const { i18n, t } = useTranslation();
+  const { i18n, t } = useTypedTranslation();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLanguage(e.target.value as string);

@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
 import { getAuth, signOut } from 'firebase/auth';
+import { FC, useState } from 'react';
+import { useTypedTranslation } from '../i18n/hooks';
 import { Language } from './language';
-import { useTranslation } from 'react-i18next';
 
 export const UserMenu: FC = () => {
   const [isOpenLang, setIsOpenLang] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTypedTranslation();
   const auth = getAuth();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {

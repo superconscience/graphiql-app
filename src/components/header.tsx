@@ -1,13 +1,13 @@
-import { FC, useRef, useState, useEffect } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTypedTranslation } from '../i18n/hooks';
 import { routesMap } from '../routes';
-import { useTranslation } from 'react-i18next';
 import { UserMenu } from './userMenu';
 
 export const Header: FC = () => {
   const [isUserMenu, setIsUserMenu] = useState(false);
   const refModal = useRef<HTMLDivElement>(null);
-  const { t } = useTranslation();
+  const { t } = useTypedTranslation();
 
   const handleClickOutside = (e: Event) => {
     const target = e.target as HTMLDivElement;

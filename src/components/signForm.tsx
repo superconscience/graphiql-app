@@ -1,17 +1,16 @@
-import { FC } from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
-  getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
   createUserWithEmailAndPassword,
+  getAuth,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from 'firebase/auth';
-import { useNavigate } from 'react-router';
+import { FC, useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import { useTypedTranslation } from '../i18n/hooks';
 import { routesMap } from '../routes';
-import { useTranslation } from 'react-i18next';
 
 export type FormInputs = {
   email: string;
@@ -24,7 +23,7 @@ type SignFormProps = {
 };
 
 export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
-  const { t } = useTranslation();
+  const { t } = useTypedTranslation();
   const {
     register,
     handleSubmit,
