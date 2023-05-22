@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import editorReducer from './slices/editor';
+import authReducer from './slices/auth';
 
 const rootReducer = combineReducers({
   editor: editorReducer,
+  auth: authReducer,
 });
 
 export function setupStore() {
