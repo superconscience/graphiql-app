@@ -50,12 +50,7 @@ a {
 @import './styles/components/language.scss';
 @import './styles/components/loader.scss';
 @import './styles/components/home.scss';
-
-#wrapper {
-  display: flex;
-  flex-direction: row;
-  height: 97.7vh;
-}
+@import './styles/components/editor.scss';
 
 #root {
   min-height: 100%;
@@ -65,20 +60,4 @@ a {
 
 .main, .content {
   flex: 1 1 auto;
-}
-
-.pane {
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;
-}
-
-#left-pane .editor {
-  height: 50%;
-}
-
-#right-pane .editor {
-  height: 100%;
 }

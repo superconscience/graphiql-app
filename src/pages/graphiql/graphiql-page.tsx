@@ -9,7 +9,7 @@ export const GraphiQlPage: FC = () => {
   const [url] = useEditorUrl();
 
   return (
-    <>
+    <div className="graph__container">
       <div>
         <Appbar />
       </div>
@@ -22,6 +22,6 @@ export const GraphiQlPage: FC = () => {
           <ResultsViewer />
         </div>
       </div>
-    </>
+    </div>
   );
 };

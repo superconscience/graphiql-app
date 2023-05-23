@@ -1,8 +1,9 @@
 .header {
   background-color: var(--background-pink-dark);
   padding: 10px 0;
-
+  
   &__container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,5 +94,11 @@
     display: flex;
     gap: 10px;
     align-items: center;
+  }
+
+  &__lang {
+    position: absolute;
+    top: 60px;
+    right: 20px;
   }
 }

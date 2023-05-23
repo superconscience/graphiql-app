@@ -7,8 +7,8 @@ export const Appbar = () => {
     setUrl(event.target.value);
   };
   return (
-    <>
-      <input style={{ width: 500 }} value={url} onChange={onUrlChange} />
-    </>
+    <div className="appbar">
+      <input className="appbar__input" value={url} onChange={onUrlChange} />
+    </div>
   );
 };

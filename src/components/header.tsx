@@ -5,6 +5,7 @@ import { selectAuth } from '../store/slices/auth';
 import { useTypedTranslation } from '../i18n/hooks';
 import { routesMap } from '../routes';
 import { UserMenu } from './userMenu';
+import { Language } from './language';
 
 export const Header: FC = () => {
   const [isUserMenu, setIsUserMenu] = useState(false);
@@ -82,6 +83,9 @@ export const Header: FC = () => {
             <Link to={routesMap.register.path} className="header__btn-auth">
               {t('signRegister')}
             </Link>
+            <div className="header__lang">
+              <Language />
+            </div>
           </div>
         )}
       </div>
