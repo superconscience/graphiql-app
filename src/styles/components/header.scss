@@ -46,4 +46,18 @@
     cursor: pointer;
     height: 35px;
   }
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  &__button-graph {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__link-graph {
+    color: var(--background-pink);
+  }
 }
