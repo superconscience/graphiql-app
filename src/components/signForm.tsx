@@ -136,14 +136,14 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
             <div>{errors.password?.message}</div>
           </div>
           <button className="sign__btn" type="submit">
-            {t('signRegister')}
+            {typeForm === 'Register' ? t('signRegister') : t('signLogin')}
           </button>
         </form>
 
         <div className="sign__or">{t('signTextOr')}</div>
 
         <button className="sign__btn-google" onClick={() => signInWithGoogle()} disabled={authing}>
-          {t('signRegisterWithGoogle')}
+          {typeForm === 'Register' ? t('signRegisterWithGoogle') : t('signLoginWithGoogle')}
         </button>
 
         <div className="sign__auth-box">

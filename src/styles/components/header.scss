@@ -1,8 +1,9 @@
 .header {
   background-color: var(--background-pink-dark);
   padding: 10px 0;
-
+  
   &__container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,5 +46,59 @@
   &__user-icon {
     cursor: pointer;
     height: 35px;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  &__button-graph {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__link-graph {
+    color: var(--background-pink);
+  }
+  &__or {
+    text-align: center;
+  }
+  &__btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    border: none;
+    cursor: pointer;
+
+    &-google {
+      padding: 10px;
+      background-color: var(--text-primary);
+      color: var(--background-primary);
+      cursor: pointer;
+    }
+  }
+
+  &__btn-auth {
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    color: var(--background-pink);
+    cursor: pointer;
+  }
+
+  &__auth-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__lang {
+    position: absolute;
+    top: 60px;
+    right: 20px;
   }
 }

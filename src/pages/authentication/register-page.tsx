@@ -17,6 +17,7 @@ export const RegisterPage: FC = () => {
         <Language />
       </div>
       <SignForm title={t('signTitleCreate')} typeForm="Register" />
+      <div className="content"></div>
       <Footer />
     </>
   );

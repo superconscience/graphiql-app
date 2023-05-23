@@ -12,6 +12,7 @@ export const LoginPage: FC = () => {
         <Language />
       </div>
       <SignForm title={t('signTitle')} typeForm="Log in" />
+      <div className="content"></div>
       <Footer />
     </>
   );

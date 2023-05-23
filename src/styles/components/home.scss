@@ -1,0 +1,30 @@
+.homePage {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__logo {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    width: 250px;
+    height: 250px;
+    background: url('./logo.svg') 0 0 / contain no-repeat;
+    animation: rotateY 4s infinite linear;
+  }
+  &__button {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    font-size: 22px;
+  }
+  &__link {
+    color: var(--background-pink);
+  }
+  &__description {
+    max-width: 500px;
+    line-height: 25px;
+    margin-bottom: 30px;
+  }
+}
