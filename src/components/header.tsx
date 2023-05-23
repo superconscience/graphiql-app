@@ -56,7 +56,7 @@ export const Header: FC = () => {
         {isAuth ? (
           <div className="header__menu">
             <div className="header__button-graph">
-              <span>Welcome to</span>
+              <span>{t('welcome')}</span>
               <NavLink to={routesMap.graphiql.path} className="header__link-graph">
                 GraphQL!
               </NavLink>
@@ -74,13 +74,13 @@ export const Header: FC = () => {
             </div>
           </div>
         ) : (
-          <div className="sign__auth-box">
-            <Link to={routesMap.login.path} className="sign__btn-auth">
-              Sign In
+          <div className="header__auth-box">
+            <Link to={routesMap.login.path} className="header__btn-auth">
+              {t('signLogin')}
             </Link>
-            <span className="sign__text">{t('signText')}</span>
-            <Link to={routesMap.register.path} className="sign__btn-auth">
-              Sign Up
+            <span className="header__text">{t('signTextOr')}</span>
+            <Link to={routesMap.register.path} className="header__btn-auth">
+              {t('signRegister')}
             </Link>
           </div>
         )}
