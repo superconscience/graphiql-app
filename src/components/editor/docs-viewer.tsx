@@ -26,11 +26,10 @@ export const GraphiQLWithExplorer = (props: GraphiQLExplorerProps & { url: strin
   if (!schema || !schema.schema) {
     return <div>Loading schema...</div>;
   }
-  console.log(schema);
   return (
     <GraphiQLExplorer
       schema={schema.schema}
-      onRunOperation={(operationName) => {}}
+      onRunOperation={() => {}}
       explorerIsOpen
       colors={{
         keyword: 'hsl(var(--color-primary))',
