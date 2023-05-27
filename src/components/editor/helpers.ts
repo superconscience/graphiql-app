@@ -8,30 +8,9 @@ export const fetcher = (url: string) =>
     url,
   });
 
-export const defaultOperations =
-  localStorage.getItem('operations') ??
-  `
-# cmd/ctrl + return/enter will execute the op,
-# same in variables editor below
-# also available via context menu & f1 command palette
+export const defaultOperations = localStorage.getItem('operations') ?? '';
 
-query($limit: Int!) {
-    payloads(limit: $limit) {
-        customer
-    }
-}
-`;
-
-export const defaultVariables =
-  localStorage.getItem('variables') ??
-  `
- {
-     // limit will appear here as autocomplete,
-     // and because the default value is 0, will
-     // complete as such
-     "limit": false
- }
-`;
+export const defaultVariables = localStorage.getItem('variables') ?? '';
 
 export const getSchema = (url: string) => async () =>
   fetcher(url)({

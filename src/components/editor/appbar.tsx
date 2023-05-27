@@ -16,6 +16,9 @@ export const Appbar = () => {
         onChange={onUrlChange}
         placeholder={t('enterUrl')}
       />
+      <div>
+        <p>{t('queryEditorLine1')}</p>
+      </div>
     </div>
   );
 };
