@@ -39,28 +39,20 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
 
   const onLogin = (email: string, password: string) => {
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
+      .then(() => {
         navigate('/');
-        console.log(user);
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+      .catch(() => {});
   };
 
   const signInWithGoogle = async () => {
     setAuthing(true);
 
     signInWithPopup(auth, new GoogleAuthProvider())
-      .then((response) => {
-        console.log(response.user.uid);
+      .then(() => {
         navigate('/');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         setAuthing(false);
       });
   };
@@ -68,15 +60,9 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
     setAuthing(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
-        //const user = userCredential.user;
         navigate('/');
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-      });
+      .catch(() => {});
   };
 
   const onSubmit = (data: FieldValues) => {

@@ -7,9 +7,9 @@ import { Loader } from './components/loader';
 import './index.scss';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <Suspense fallback={<Loader />}>
-      <App />
-    </Suspense>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Suspense fallback={<Loader />}>
+    <App />
+  </Suspense>
+  // </React.StrictMode>
 );
