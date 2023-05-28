@@ -13,6 +13,26 @@ export const Header: FC = () => {
   const { isAuth } = useAppSelector(selectAuth);
   const { t } = useTypedTranslation();
 
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollDistance = window.pageYOffset;
+
+      if (scrollDistance > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const handleClickOutside = (e: Event) => {
     const target = e.target as HTMLDivElement;
     if (refModal.current && !refModal.current?.contains(target)) {
@@ -26,7 +46,7 @@ export const Header: FC = () => {
   });
 
   return (
-    <header className="header">
+    <header className={`header ${isSticky ? 'sticky-header' : ''}`}>
       <div className="header__container">
         <nav className="header__nav">
           <NavLink className="header__logo" to={routesMap.home.path}>
