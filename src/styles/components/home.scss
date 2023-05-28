@@ -1,18 +1,23 @@
 .homePage {
   &__wrapper {
     margin: 0 auto;
-    padding: 0 15px;
-    max-width: 500px;
+    padding: 0 20px;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
   }
   &__logo {
     text-align: center;
-    margin: 70px auto 70px auto;
-    width: 200px;
-    height: 200px;
+    margin: 60px auto 60px auto;
+    width: 180px;
+    height: 180px;
     background: url('./logo.svg') 0 0 / contain no-repeat;
     animation: rotateY 4s infinite linear;
+    @media (max-width: 500px) {
+      width: 130px;
+      height: 130px;
+      margin: 40px auto 40px auto;
+    }
   }
   &__button {
     margin: 0 auto;
@@ -26,7 +31,7 @@
   }
   &__link {
     color: var(--background-pink);
-    margin-right: 10px;
+    margin-right: 5px;
   }
   &__description {
     line-height: 27px;

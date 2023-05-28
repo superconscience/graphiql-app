@@ -20,7 +20,12 @@ export const HomePage: FC = () => {
             </NavLink>
           </div>
         )}
-        <div className="homePage__description">{t('homeDescription')}</div>
+        <div className="homePage__description">
+          <Link className="homePage__link" to="https://graphql.org/" target="_blank">
+            GraphQL
+          </Link>
+          {t('homeDescription')}
+        </div>
         <div className="homePage__description">
           <Link className="homePage__link" to="https://rs.school/" target="_blank">
             RS School
