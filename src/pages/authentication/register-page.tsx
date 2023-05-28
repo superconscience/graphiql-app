@@ -25,7 +25,9 @@ export const RegisterPage: FC = () => {
   }, [auth, navigate]);
   return (
     <>
-      <div className="background"></div>
+      <div className="background">
+        <img className="background__img" src="./bg.jpg" alt="background" />
+      </div>
       <div className="language__container">
         <Language />
       </div>

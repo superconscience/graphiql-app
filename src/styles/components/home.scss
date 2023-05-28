@@ -11,12 +11,19 @@
     margin: 60px auto 60px auto;
     width: 180px;
     height: 180px;
-    background: url('./logo.svg') 0 0 / contain no-repeat;
     animation: rotateY 4s infinite linear;
     @media (max-width: 500px) {
       width: 130px;
       height: 130px;
       margin: 40px auto 40px auto;
+    }
+  }
+  &__logo-img {
+    width: 180px;
+    height: 180px;
+    @media (max-width: 500px) {
+      width: 130px;
+      height: 130px;
     }
   }
   &__button {

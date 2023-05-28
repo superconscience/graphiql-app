@@ -11,7 +11,9 @@ export const HomePage: FC = () => {
   return (
     <div className="homePage">
       <div className="homePage__wrapper">
-        <div className="homePage__logo"></div>
+        <div className="homePage__logo">
+          <img className="homePage__logo-img" src="./logo.svg" alt="logotype" />
+        </div>
         {isAuth && (
           <div className="homePage__button">
             <span>{t('welcome')}</span>
