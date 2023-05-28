@@ -7,7 +7,6 @@ interface EditorState {
 }
 
 const initialState: EditorState = {
-  // url: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
   url: 'https://rickandmortyapi.com/graphql',
 };
 
