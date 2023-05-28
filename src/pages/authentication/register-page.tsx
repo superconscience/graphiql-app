@@ -13,6 +13,7 @@ export const RegisterPage: FC = () => {
   const { t } = useTypedTranslation();
   return (
     <>
+      <div className="background"></div>
       <div className="language__container">
         <Language />
       </div>

@@ -9,7 +9,6 @@
   flex-wrap: wrap;
   gap: 10px;
   border-radius: 10px;
-  //background: url('./bg.jpg') center / cover no-repeat;
   background-color: var(--background-primary);
   border: 3px solid var(--background-secondary);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -19,8 +18,6 @@
     margin: 0 auto 20px auto;
     font-weight: 600;
     font-size: 24px;
-  }
-  &__form {
   }
 
   &__field {
