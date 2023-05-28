@@ -78,7 +78,7 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
     <>
       <div className="sign">
         <div className="sign__title">{title}</div>
-        <form className="sign__form" onSubmit={handleSubmit(onSubmit)}>
+        <form className="sign__form" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="sign__field">
             <label className="sign__form-label" htmlFor="name">
               {t('signEmail')}
