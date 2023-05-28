@@ -1,30 +1,55 @@
 .homePage {
   &__container {
+    max-width: 500px;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
   }
   &__logo {
-    margin-top: 80px;
-    margin-bottom: 80px;
-    width: 250px;
-    height: 250px;
+    text-align: center;
+    margin: 70px auto 70px auto;
+    width: 200px;
+    height: 200px;
     background: url('./logo.svg') 0 0 / contain no-repeat;
     animation: rotateY 4s infinite linear;
   }
   &__button {
+    margin: 0 auto;
     margin-bottom: 30px;
     display: flex;
     gap: 10px;
     font-size: 22px;
+    @media (max-width: 550px) {
+      font-size: 16px;
+    }
   }
   &__link {
     color: var(--background-pink);
+    margin-right: 10px;
   }
   &__description {
-    max-width: 500px;
-    line-height: 25px;
+    line-height: 27px;
     margin-bottom: 30px;
+  }
+  &__list {
+    margin-left: 30px;
+  }
+  &__team {
+    max-width: 500px;
+    display: flex;
+    gap: 5px;
+    align-items: start;
+    flex-direction: column;
+
+    &-list {
+      list-style: none;
+      margin-left: 30px;
+      display: flex;
+      gap: 5px;
+    }
+
+    &-item {
+      color: var(--background-pink);
+    }
   }
 }
