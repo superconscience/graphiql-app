@@ -95,7 +95,7 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
               className="sign__input"
               type="email"
             />
-            <div>{errors.email?.message}</div>
+            <div className="sign__error">{errors.email?.message}</div>
           </div>
           <div className="sign__field">
             <label className="sign__form-label" htmlFor="name">
@@ -119,7 +119,7 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
                 },
               })}
             />
-            <div>{errors.password?.message}</div>
+            <div className="sign__error">{errors.password?.message}</div>
           </div>
           <button className="sign__btn" type="submit">
             {typeForm === 'Register' ? t('signRegister') : t('signLogin')}

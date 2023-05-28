@@ -76,6 +76,10 @@
   &__auth-box {
     margin-top: 5px;
   }
+  &__error {
+    font-size: 14px;
+    color: var(--background-pink);
+  }
 }
 
 @media (max-width: 600px) {
