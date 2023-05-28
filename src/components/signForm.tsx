@@ -85,11 +85,11 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
             </label>
             <input
               {...register('email', {
-                required: 'Email is required',
+                required: t('formReq'),
                 pattern: {
                   value:
                     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  message: 'Please enter a valid email',
+                  message: t('formValidEmail'),
                 },
               })}
               className="sign__input"
@@ -105,16 +105,16 @@ export const SignForm: FC<SignFormProps> = ({ title, typeForm }) => {
               type="password"
               className="sign__input"
               {...register('password', {
-                required: 'required',
+                required: t('formReq'),
                 minLength: {
                   value: 8,
-                  message: 'must be 8 chars',
+                  message: t('formReqEight'),
                 },
                 validate: (value) => {
                   return (
                     [/[a-z]/, /[A-Z]/, /[0-9]/, /[^a-zA-Z0-9]/].every((pattern) =>
                       pattern.test(value)
-                    ) || 'must include lower, upper, number, and special chars'
+                    ) || t('formReqChars')
                   );
                 },
               })}
