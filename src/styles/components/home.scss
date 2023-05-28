@@ -1,0 +1,68 @@
+.homePage {
+  &__wrapper {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__logo {
+    text-align: center;
+    margin: 60px auto 60px auto;
+    width: 180px;
+    height: 180px;
+    animation: rotateY 4s infinite linear;
+    @media (max-width: 500px) {
+      width: 130px;
+      height: 130px;
+      margin: 40px auto 40px auto;
+    }
+  }
+  &__logo-img {
+    width: 180px;
+    height: 180px;
+    @media (max-width: 500px) {
+      width: 130px;
+      height: 130px;
+    }
+  }
+  &__button {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    font-size: 22px;
+    @media (max-width: 550px) {
+      font-size: 16px;
+    }
+  }
+  &__link {
+    color: var(--background-pink);
+    margin-right: 5px;
+  }
+  &__description {
+    line-height: 27px;
+    margin-bottom: 30px;
+  }
+  &__list {
+    margin-left: 30px;
+  }
+  &__team {
+    max-width: 500px;
+    display: flex;
+    gap: 5px;
+    align-items: start;
+    flex-direction: column;
+
+    &-list {
+      list-style: none;
+      margin-left: 30px;
+      display: flex;
+      gap: 5px;
+    }
+
+    &-item {
+      color: var(--background-pink);
+    }
+  }
+}

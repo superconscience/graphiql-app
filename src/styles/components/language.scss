@@ -1,0 +1,26 @@
+.language {
+  display: flex;
+  gap: 10px;
+
+  &__container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+.radio {
+  &__input {
+    display: none;
+
+    &:checked ~ .radio__name {
+      color: var(--background-pink);
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+  &__name {
+    font-size: 16px;
+  }
+}

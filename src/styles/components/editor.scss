@@ -1,0 +1,72 @@
+.appbar {
+  margin: 0;
+  background-color: var(--background-secondary);
+  margin: 5px 0;
+  &__input {
+    margin: 2px;
+    color: #fff;
+    width: 95%;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    background: none;
+  }
+  &__comment {
+    background-color: var(--background-pink-dark);
+    font-size: 14px;
+    margin: 2px 0px;
+  }
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+
+  height: calc(100vh - 159px);
+  background-color: var(--background-pink-dark);
+  color: #fff;
+}
+
+.pane {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+#left-pane .editor {
+  height: 50%;
+  display: flex;
+  overflow: hidden;
+}
+
+#right-pane .editor {
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  #wrapper {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #left-pane {
+    height: 50%;
+    overflow: hidden;
+
+    .editor {
+      border-bottom: 3px solid var(--background-primary);
+    }
+  }
+  #right-pane {
+    height: 50%;
+    overflow: hidden;
+  }
+
+  .pane {
+    width: 100%;
+  }
+}

@@ -1,0 +1,118 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--background-pink-dark);
+  backdrop-filter: blur(0px);
+
+  &.sticky-header {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease 0s;
+  }
+
+  &__container {
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-icon {
+      height: 40px;
+    }
+  }
+  &__link {
+    color: var(--text-grey);
+    &-active {
+      border-bottom: 1px solid var(--text-primary);
+      color: var(--text-primary);
+    }
+  }
+  &__nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+  }
+  &__list {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  &__user-icon {
+    cursor: pointer;
+    height: 35px;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  &__button-graph {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @media (max-width: 550px) {
+      display: none;
+    }
+  }
+  &__link-graph {
+    color: var(--background-pink);
+  }
+  &__or {
+    text-align: center;
+  }
+  &__btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    border: none;
+    cursor: pointer;
+
+    &-google {
+      padding: 10px;
+      background-color: var(--text-primary);
+      color: var(--background-primary);
+      cursor: pointer;
+    }
+  }
+
+  &__btn-auth {
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    color: var(--background-pink);
+    cursor: pointer;
+  }
+
+  &__auth-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__lang {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+  }
+}
