@@ -10,7 +10,7 @@ export const HomePage: FC = () => {
   const { t } = useTypedTranslation();
   return (
     <div className="homePage">
-      <div className="homePage__container">
+      <div className="homePage__wrapper">
         <div className="homePage__logo"></div>
         {isAuth && (
           <div className="homePage__button">
@@ -25,10 +25,7 @@ export const HomePage: FC = () => {
           <Link className="homePage__link" to="https://rs.school/" target="_blank">
             RS School
           </Link>
-          is free-of-charge and community-based education program conducted by The Rolling Scopes
-          developer community since 2013. Everyone can study at RS School, regardless of age,
-          professional employment, or place of residence. The mentors and trainers of our school are
-          front-end and javascript developers from different companies and countries.
+          {t('homeDescriptionShool')}
         </div>
         <div className="homePage__description">
           <Link
@@ -38,11 +35,8 @@ export const HomePage: FC = () => {
           >
             React course
           </Link>
-          <span>Free | Online | In english</span>
-          <div>
-            Students of the RS School from the 2022Q3, which has passed RS School Stage #2 as well
-            as new students with practical experience and knowledge of:
-          </div>
+          <span>{t('homeDescriptionCourse')}</span>
+          <div>{t('homeDescriptionCourseDes')}</div>
           <ul className="homePage__list">
             <li>JavaScript</li>
             <li>TypeScript</li>
@@ -55,10 +49,10 @@ export const HomePage: FC = () => {
         </div>
 
         <div className="homePage__description">
-          <div>Our team:</div>
+          <div>{t('homeTeam')}</div>
           <ul className="homePage__team">
             <li className="homePage__team-list">
-              Team Leader -
+              {t('homeTeamLeader')}
               <Link
                 className="homePage__team-item"
                 to="https://github.com/superconscience"
@@ -68,7 +62,7 @@ export const HomePage: FC = () => {
               </Link>
             </li>
             <li className="homePage__team-list">
-              FE Developer -
+              {t('homeTeamDev')}
               <Link
                 className="homePage__team-item"
                 to="https://github.com/Alex89198900"
@@ -78,7 +72,7 @@ export const HomePage: FC = () => {
               </Link>
             </li>
             <li className="homePage__team-list">
-              FE Developer -
+              {t('homeTeamDev')}
               <Link className="homePage__team-item" to="https://github.com/akiroi" target="_blank">
                 akiroi
               </Link>

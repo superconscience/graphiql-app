@@ -1,8 +1,9 @@
 .homePage {
-  &__container {
+  &__wrapper {
+    margin: 0 auto;
+    padding: 0 15px;
     max-width: 500px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
   }
   &__logo {
